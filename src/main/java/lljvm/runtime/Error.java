@@ -285,19 +285,11 @@ public final class Error {
     /** Pointer to errno */
     public int errno;
     
-    public Error() {
-    }
-    
-    @Override
-    public void initialize(Context context) {
-        this.memory = context.getModule(Memory.class);
+    public Error()
+    {
         errno = memory.allocateData(4);
     }
-
-    @Override
-    public void destroy(Context context) {
-    }
-
+    
     /**
      * Returns the value of errno.
      * 

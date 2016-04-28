@@ -44,15 +44,6 @@ public class JumpFunctions {
     public JumpFunctions() {
     }
 
-    @Override
-    public void initialize(Context context) {
-        this.memory = context.getModule(Memory.class);
-    }
-
-    @Override
-    public void destroy(Context context) {
-    }
-
     /**
      * Save the stack context in env for later use by longjmp.
      * 

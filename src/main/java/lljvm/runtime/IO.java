@@ -105,26 +105,12 @@ public final class IO {
     /**
      * Prevent this class from being instantiated.
      */
-    public IO() {
-    	
-    }
-    
-    
-    @Override
-    public void initialize(Context context) {
-        this.memory = context.getModule(Memory.class);
-        this.error = context.getModule(Error.class);
-        this.fileSystem = context.getModule(FileSystem.class);
+    private IO() {
         StandardHandleFactory shf = context.getModule(StandardHandleFactory.class);
         putFileHandle(shf.createStdin());
         putFileHandle(shf.createStdout());
         putFileHandle(shf.createStderr());
     }
-
-    @Override
-    public void destroy(Context context) {
-        close();
-    }    
 
     /**
      * Open and possibly create a file or device.

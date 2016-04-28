@@ -68,18 +68,6 @@ public final class System {
     }
 
 
-    @Override
-    public void initialize(Context context) {
-        this.error = context.getModule(Error.class);
-        this.io = context.getModule(IO.class);
-    }
-
-
-    @Override
-    public void destroy(Context context) {
-    }
-
-
     /**
      * Performs any necessary cleanup, then terminates with the specified
      * status code.

@@ -24,7 +24,6 @@ package lljvm.io;
 
 import java.io.IOException;
 
-import lljvm.runtime.Context;
 import lljvm.runtime.Error;
 import lljvm.runtime.Memory;
 
@@ -41,7 +40,6 @@ public abstract class AbstractFileHandle implements FileHandle {
     /** Specifies whether to enable synchronous I/O */
     protected final boolean synchronous;
     
-    protected final Context context;
     protected final Memory memory;
     protected final Error error;
     
@@ -53,9 +51,8 @@ public abstract class AbstractFileHandle implements FileHandle {
      * @param write  specifies whether this file descriptor supports
      *               writing
      */
-    protected AbstractFileHandle(Context context, boolean read, boolean write,
+    protected AbstractFileHandle(boolean read, boolean write,
                                  boolean synchronous) {
-    	this.context = context;
     	this.memory = context.getModule(Memory.class);
     	this.error = context.getModule(Error.class);
         this.read = read;

@@ -86,24 +86,13 @@ public final class Memory
             super("Address = "+addr+" (0x"+Integer.toHexString(addr)+")");
         }
     }
-
-    private Context context;
     
     /**
      * Prevent this class from being instantiated.
      */
-    public Memory() {
+    private Memory() {
     }
     
-    @Override
-    public void initialize(Context context) {
-        this.context = context;
-    }
-
-    @Override
-    public void destroy(Context context) {
-    }
-
     /**
      * Create a new page.
      * @return  the new page

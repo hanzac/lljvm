@@ -52,16 +52,7 @@ public final class Function {
     /**
      * Prevent this class from being instantiated.
      */
-    public Function() {
-    }
-    @Override
-    public void initialize(Context context) {
-        this.context = context;
-        this.memory = context.getModule(Memory.class);
-    }
-
-    @Override
-    public void destroy(Context context) {
+    private Function() {
     }
     //TODO: Have to be able to register instances...
     

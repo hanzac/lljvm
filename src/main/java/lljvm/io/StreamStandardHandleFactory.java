@@ -7,8 +7,7 @@ import java.io.OutputStream;
 import lljvm.runtime.Context;
 import lljvm.runtime.Module;
 
-public class StreamStandardHandleFactory implements StandardHandleFactory, Module {
-    private Context context;
+public class StreamStandardHandleFactory implements StandardHandleFactory {
     private final InputStream stdin;
     private final OutputStream stdout;
     private final OutputStream stderr;
@@ -18,15 +17,6 @@ public class StreamStandardHandleFactory implements StandardHandleFactory, Modul
         this.stdin = stdin;
         this.stdout = stdout;
         this.stderr = stderr;
-    }
-
-    @Override
-    public void initialize(Context context) {
-        this.context = context;
-    }
-
-    @Override
-    public void destroy(Context context) {
     }
 
     @Override

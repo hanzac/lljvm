@@ -25,36 +25,23 @@ package lljvm.io;
 import java.io.File;
 import java.io.IOException;
 
-import lljvm.runtime.Context;
 import lljvm.runtime.Error;
 import lljvm.runtime.IO;
-import lljvm.runtime.Module;
 
 /**
  * Implements the FileSystem interface using the native Java I/O operations.
  * 
  * @author  David Roberts
  */
-public class NativeFileSystem implements FileSystem, Module {
+public class NativeFileSystem implements FileSystem {
     /** User working directory system property */
     private static final String USER_DIR = System.getProperty("user.dir");
     /** Current working directory */
     private File cwd = (USER_DIR == null ? new File("") : new File(USER_DIR));
     
     private Error error;
-    private Context context;
     
     public NativeFileSystem() {
-    }
-    
-    @Override
-    public void initialize(Context context) {
-        this.error = context.getModule(Error.class);
-        this.context = context;
-    }
-
-    @Override
-    public void destroy(Context context) {
     }
 
     /**

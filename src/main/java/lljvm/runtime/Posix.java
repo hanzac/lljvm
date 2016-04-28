@@ -34,15 +34,6 @@ public final class Posix {
 	public Posix() {
     }
     
-    @Override
-    public void initialize(Context context) {
-        this.error = context.getModule(Error.class);
-    }
-
-    @Override
-    public void destroy(Context context) {
-    }
-
     /**
      * Manipulate the given file descriptor.
      * 

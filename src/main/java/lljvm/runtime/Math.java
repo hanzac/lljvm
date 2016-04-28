@@ -45,17 +45,9 @@ public final class Math {
     /**
      * Prevent this class from being instantiated.
      */
-    public Math() {
+    private Math() {
     }
     
-    @Override
-    public void initialize(Context context) {
-        this.memory = context.getModule(Memory.class);
-    }
-
-    @Override
-    public void destroy(Context context) {
-    }
 
     /**
      * Inverse hyperbolic sine function.
