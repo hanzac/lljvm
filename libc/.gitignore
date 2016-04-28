@@ -1,4 +1,0 @@
-libc.j
-libc.bc
-*.o
-/linktest/
