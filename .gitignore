@@ -13,3 +13,6 @@ build/
 
 #ctags
 tags
+
+#vim swap
+*.swp
