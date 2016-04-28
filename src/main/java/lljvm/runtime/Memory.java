@@ -36,6 +36,16 @@ import lljvm.util.ReflectionUtils;
  */
 public final class Memory
 {
+    public static Memory mem = null;
+    public static final Memory getMemorySingleton()
+    {
+        if(mem == null)
+        {
+            mem = new Memory();
+        }
+        return mem;
+    }
+
     private static final int ALIGNMENT = 8; // 8-byte alignment
     private static final int MEM_SIZE = 1<<30; // 1 GiB of virtual memory
     private static final int DATA_SIZE = 1<<20; // 1 MiB Data+BSS

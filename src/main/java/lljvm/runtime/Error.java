@@ -29,6 +29,17 @@ package lljvm.runtime;
  * @author  David Roberts
  */
 public final class Error {
+
+    private static Error err = null;
+    public static final getErrorSingleton(Memory mem)
+    {
+        if(err == null)
+        {
+            err = new Error(mem);
+        }
+        return err;
+    }
+
     /** Not super-user */
     public static final int EPERM = 1;
     /** No such file or directory */
@@ -285,8 +296,9 @@ public final class Error {
     /** Pointer to errno */
     public int errno;
     
-    public Error()
+    private Error(Memory memory)
     {
+        this.memory = memory;
         errno = memory.allocateData(4);
     }
     
