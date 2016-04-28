@@ -28,7 +28,7 @@ package lljvm.runtime;
  * @author Joshua Arnold (refactored into this class)
  *
  */
-public class JumpFunctions implements Module {
+public class JumpFunctions {
 	
     /** The number of setjmp calls that have been made so far */
     private int numJumps = 0;

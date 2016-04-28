@@ -33,7 +33,7 @@ import lljvm.io.StandardHandleFactory;
  * 
  * @author  David Roberts
  */
-public final class IO implements Module {
+public final class IO {
     /** Open for reading only */
     public static final int O_RDONLY   = 0x0000;
     /** Open for writing only */

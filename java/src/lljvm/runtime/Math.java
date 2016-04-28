@@ -28,7 +28,7 @@ package lljvm.runtime;
  * 
  * @author  David Roberts
  */
-public final class Math implements Module {
+public final class Math {
     /** Not a Number */
     public static final int FP_NAN = 0;
     /** Positive/negative infinity */

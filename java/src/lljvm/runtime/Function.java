@@ -37,7 +37,7 @@ import lljvm.util.ReflectionUtils;
  * 
  * @author  David Roberts
  */
-public final class Function implements Module {
+public final class Function {
     /** Set of registered classes */
     private final Set<String> registeredClasses = new HashSet<String>();
     /** Map of function signatures to function pointers */

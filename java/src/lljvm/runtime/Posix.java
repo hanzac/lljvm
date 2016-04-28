@@ -27,7 +27,7 @@ package lljvm.runtime;
  * 
  * @author  David Roberts
  */
-public final class Posix implements Module {
+public final class Posix {
 	
 	private Error error;
 

@@ -28,7 +28,7 @@ package lljvm.runtime;
  * 
  * @author  David Roberts
  */
-public final class Error implements Module {
+public final class Error {
     /** Not super-user */
     public static final int EPERM = 1;
     /** No such file or directory */

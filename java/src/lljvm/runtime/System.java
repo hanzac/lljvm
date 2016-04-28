@@ -31,7 +31,7 @@ import java.util.concurrent.Callable;
  * 
  * @author  David Roberts
  */
-public final class System implements Module {
+public final class System {
 	
 	private Error error;
 	private IO io;
