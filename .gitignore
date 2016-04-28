@@ -6,3 +6,10 @@ lljvm-doc-*.zip
 lljvm-backend
 *~
 Session.vim
+
+#gradle files
+build/
+.gradle/
+
+#ctags
+tags
