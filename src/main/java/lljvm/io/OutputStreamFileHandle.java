@@ -25,8 +25,6 @@ package lljvm.io;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import lljvm.runtime.Context;
-
 /**
  * Implements the FileHandle interface, backed by an OutputStream.
  * 
@@ -41,8 +39,8 @@ public class OutputStreamFileHandle extends AbstractFileHandle {
      * 
      * @param outputStream  the output stream
      */
-    public OutputStreamFileHandle(Context context, OutputStream outputStream) {
-        super(context, false, true, false);
+    public OutputStreamFileHandle(OutputStream outputStream) {
+        super(false, true, false);
         this.outputStream = outputStream; 
     }
     

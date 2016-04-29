@@ -25,8 +25,6 @@ package lljvm.io;
 import java.io.IOException;
 import java.io.InputStream;
 
-import lljvm.runtime.Context;
-
 /**
  * Implements the FileHandle interface, backed by an InputStream.
  * 

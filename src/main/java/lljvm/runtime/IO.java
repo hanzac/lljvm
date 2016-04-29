@@ -27,6 +27,7 @@ import java.io.IOException;
 import lljvm.io.FileHandle;
 import lljvm.io.FileSystem;
 import lljvm.io.StandardHandleFactory;
+import lljvm.io.DefaultStandardHandleFactory;
 
 /**
  * Provides methods and constants related to I/O.
@@ -106,7 +107,7 @@ public final class IO {
      * Prevent this class from being instantiated.
      */
     private IO() {
-        StandardHandleFactory shf = context.getModule(StandardHandleFactory.class);
+        StandardHandleFactory shf = new DefaultStandardHandleFactory();
         putFileHandle(shf.createStdin());
         putFileHandle(shf.createStdout());
         putFileHandle(shf.createStderr());

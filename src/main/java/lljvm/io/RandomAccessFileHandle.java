@@ -27,7 +27,6 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 
-import lljvm.runtime.Context;
 import lljvm.runtime.Error;
 import lljvm.runtime.IO;
 import lljvm.runtime.Memory;
@@ -47,9 +46,9 @@ public class RandomAccessFileHandle extends AbstractFileHandle {
      * @param flags         the file status flags
      * @throws IOException  if an error occurs while opening the file
      */
-    public RandomAccessFileHandle(Context context, File file, int flags)
+    public RandomAccessFileHandle(File file, int flags)
     throws IOException {
-        super(context, (flags & IO.O_WRONLY) == 0,
+        super((flags & IO.O_WRONLY) == 0,
               (flags & (IO.O_WRONLY|IO.O_RDWR)) != 0,
               (flags & IO.O_SYNC) != 0);
         this.file = new RandomAccessFile(file, this.write ? "rw" : "r");

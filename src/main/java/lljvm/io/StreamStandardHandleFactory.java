@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import lljvm.runtime.Context;
-import lljvm.runtime.Module;
-
 public class StreamStandardHandleFactory implements StandardHandleFactory {
     private final InputStream stdin;
     private final OutputStream stdout;
@@ -21,17 +18,17 @@ public class StreamStandardHandleFactory implements StandardHandleFactory {
 
     @Override
     public FileHandle createStdin() {
-        return new InputStreamFileHandle(context, stdin);
+        return new InputStreamFileHandle(stdin);
     }
 
     @Override
     public FileHandle createStdout() {
-        return new OutputStreamFileHandle(context, stdout);
+        return new OutputStreamFileHandle(stdout);
     }
 
     @Override
     public FileHandle createStderr() {
-        return new OutputStreamFileHandle(context, stderr);
+        return new OutputStreamFileHandle(stderr);
     }
     
     /**

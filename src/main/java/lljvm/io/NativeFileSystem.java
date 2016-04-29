@@ -97,7 +97,7 @@ public class NativeFileSystem implements FileSystem {
      */
     private FileHandle open(File file, int flags) {
         try {
-            return new RandomAccessFileHandle(context, file, flags);
+            return new RandomAccessFileHandle(file, flags);
         } catch(IOException e) {
             error.errno(Error.EACCES);
             return null;
