@@ -1,13 +1,13 @@
 apply plugin: 'java'
+apply plugin: 'findbugs'
 
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 
-configurations {
-    lint {
-        description = 'static code analysis'
-        transitive = true
-    }
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.13'
 }
 
-dependencies {
-    lint 'com.google.code.findbugs:jsr305:3.0.1'
+repositories {
+    mavenCentral()
 }
