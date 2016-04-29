@@ -46,6 +46,8 @@ public final class Memory
         return mem;
     }
 
+    private static final Error error = Error.getErrorSingleton(getMemorySingleton());
+
     private static final int ALIGNMENT = 8; // 8-byte alignment
     private static final int MEM_SIZE = 1<<30; // 1 GiB of virtual memory
     private static final int DATA_SIZE = 1<<20; // 1 MiB Data+BSS
@@ -249,7 +251,6 @@ public final class Memory
         final int prevHeapEnd = heapEnd;
         if(heapEnd + increment > MEM_SIZE - STACK_SIZE
         || heapEnd + increment < DATA_SIZE) {
-            Error error = context.getModule(Error.class);
             return error.errno(Error.ENOMEM);
         }
         heapEnd += increment;
@@ -396,7 +397,7 @@ public final class Memory
     public int store(int addr, String string, int size) {
         final byte[] bytes = string.getBytes();
         if(bytes.length + 1 > size) {
-            context.getModule(Error.class).errno(Error.ERANGE);
+            error.errno(Error.ERANGE);
             return NULL;
         }
         store(addr, bytes);

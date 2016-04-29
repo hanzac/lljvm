@@ -30,14 +30,15 @@ package lljvm.runtime;
  */
 public final class Error {
 
-    private static Error err = null;
-    public static final getErrorSingleton(Memory mem)
+    private static Error error = null;
+    public static final Error getErrorSingleton(Memory mem)
     {
-        if(err == null)
+        //if error is null we have to allocate memory for errno in the singleton, which is why we need a Memory parameter
+        if(error == null)
         {
-            err = new Error(mem);
+            error = new Error(mem);
         }
-        return err;
+        return error;
     }
 
     /** Not super-user */
