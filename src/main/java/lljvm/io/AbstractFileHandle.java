@@ -53,8 +53,8 @@ public abstract class AbstractFileHandle implements FileHandle {
      */
     protected AbstractFileHandle(boolean read, boolean write,
                                  boolean synchronous) {
-    	this.memory = context.getModule(Memory.class);
-    	this.error = context.getModule(Error.class);
+    	this.memory = Memory.getMemorySingleton();
+    	this.error = Error.getErrorSingleton(memory);
         this.read = read;
         this.write = write;
         this.synchronous = synchronous;

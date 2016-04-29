@@ -41,8 +41,8 @@ public class InputStreamFileHandle extends AbstractFileHandle {
      * 
      * @param inputStream  the input stream
      */
-    public InputStreamFileHandle(Context context, InputStream inputStream) {
-        super(context, true, false, false);
+    public InputStreamFileHandle(InputStream inputStream) {
+        super(true, false, false);
         this.inputStream = inputStream;
     }
     
