@@ -8,6 +8,16 @@ task wrapper(type: Wrapper) {
   gradleVersion = '2.13'
 }
 
+
+//FindBugs lint tool
+findbugs {
+  ignoreFailures = true
+  toolVersion = "3.0.1"
+  sourceSets = [sourceSets.main]
+  reportsDir = file("$project.buildDir/reports/findbugs")
+  effort = "max"
+}
+
 repositories {
     mavenCentral()
 }
