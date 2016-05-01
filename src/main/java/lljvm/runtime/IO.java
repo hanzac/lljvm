@@ -26,6 +26,7 @@ import java.io.IOException;
 
 import lljvm.io.FileHandle;
 import lljvm.io.FileSystem;
+import lljvm.io.NativeFileSystem;
 import lljvm.io.StandardHandleFactory;
 import lljvm.io.DefaultStandardHandleFactory;
 import lljvm.runtime.Error;
@@ -37,6 +38,16 @@ import lljvm.runtime.Memory;
  * @author  David Roberts
  */
 public final class IO {
+    public static IO ioSingleton = null;
+    public static final IO getIOSingleton()
+    {
+        if(ioSingleton == null)
+        {
+            ioSingleton = new IO();
+        }
+        return ioSingleton;
+    }
+
     /** Open for reading only */
     public static final int O_RDONLY   = 0x0000;
     /** Open for writing only */

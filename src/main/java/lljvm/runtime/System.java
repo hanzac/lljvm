@@ -24,6 +24,7 @@ package lljvm.runtime;
 
 import java.util.concurrent.Callable;
 
+import lljvm.runtime.IO;
 import lljvm.runtime.Error;
 import lljvm.runtime.Memory;
 
@@ -37,7 +38,7 @@ import lljvm.runtime.Memory;
 public final class System {
 	
 	private Error error = Error.getErrorSingleton(Memory.getMemorySingleton());
-	private IO io = new IO();
+	private IO io = IO.getIOSingleton();
 	
     /** Throw an exception instead of calling System.exit? */
     private boolean throwExit = false;
