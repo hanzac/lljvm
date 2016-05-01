@@ -73,6 +73,7 @@ public final class Memory
     /** Current number of frames on the stack */
     private int stackDepth = 0;
     
+    private Memory()
     {
         final int DATA_BOTTOM = 0>>>PAGE_SHIFT;
         final int DATA_END = (DATA_SIZE - 1)>>>PAGE_SHIFT;
@@ -97,12 +98,6 @@ public final class Memory
         public SegmentationFault(int addr) {
             super("Address = "+addr+" (0x"+Integer.toHexString(addr)+")");
         }
-    }
-    
-    /**
-     * Prevent this class from being instantiated.
-     */
-    private Memory() {
     }
     
     /**
