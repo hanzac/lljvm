@@ -26,6 +26,7 @@ import java.io.File;
 import java.io.IOException;
 
 import lljvm.runtime.Error;
+import lljvm.runtime.Memory;
 import lljvm.runtime.IO;
 
 /**
@@ -39,7 +40,7 @@ public class NativeFileSystem implements FileSystem {
     /** Current working directory */
     private File cwd = (USER_DIR == null ? new File("") : new File(USER_DIR));
     
-    private Error error;
+    private Error error = Error.getErrorSingleton(Memory.getMemorySingleton());
     
     public NativeFileSystem() {
     }

@@ -24,6 +24,9 @@ package lljvm.runtime;
 
 import java.util.concurrent.Callable;
 
+import lljvm.runtime.Error;
+import lljvm.runtime.Memory;
+
 // TODO: proper environ support
 
 /**
@@ -33,8 +36,8 @@ import java.util.concurrent.Callable;
  */
 public final class System {
 	
-	private Error error;
-	private IO io;
+	private Error error = Error.getErrorSingleton(Memory.getMemorySingleton());
+	private IO io = new IO();
 	
     /** Throw an exception instead of calling System.exit? */
     private boolean throwExit = false;

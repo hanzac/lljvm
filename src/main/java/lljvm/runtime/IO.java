@@ -28,6 +28,8 @@ import lljvm.io.FileHandle;
 import lljvm.io.FileSystem;
 import lljvm.io.StandardHandleFactory;
 import lljvm.io.DefaultStandardHandleFactory;
+import lljvm.runtime.Error;
+import lljvm.runtime.Memory;
 
 /**
  * Provides methods and constants related to I/O.
@@ -98,10 +100,10 @@ public final class IO {
     private int numFileDescriptors = 0;
     
     /** The file system interface */
-    private FileSystem fileSystem;
+    private FileSystem fileSystem = new NativeFileSystem();
     
-    private Memory memory;
-    private Error error;
+    private Memory memory = Memory.getMemorySingleton();
+    private Error error = Error.getErrorSingleton(Memory.getMemorySingleton());
     
     /**
      * Prevent this class from being instantiated.

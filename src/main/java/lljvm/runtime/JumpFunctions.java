@@ -33,7 +33,7 @@ public class JumpFunctions {
     /** The number of setjmp calls that have been made so far */
     private int numJumps = 0;
 
-    private Memory memory;
+    private Memory memory = Memory.getMemorySingleton();
     
     /**
      * Create a new Jump with the given ID and return value.

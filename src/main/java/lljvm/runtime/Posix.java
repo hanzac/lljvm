@@ -22,6 +22,9 @@
 
 package lljvm.runtime;
 
+import lljvm.runtime.Error;
+import lljvm.runtime.Memory;
+
 /**
  * Provides routines defined by the POSIX API.
  * 
@@ -29,7 +32,7 @@ package lljvm.runtime;
  */
 public final class Posix {
 	
-	private Error error;
+	private Error error = Error.getErrorSingleton(Memory.getMemorySingleton());
 
 	public Posix() {
     }
