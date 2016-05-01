@@ -57,14 +57,13 @@ public class MemoryTests
             int following_ptr = mem.storeStack(value / 2);
 
             //make sure the pointers are in the right order
-//            assertEquals(LONG_SIZE, value_ptr - next_ptr);
-//            assertEquals(LONG_SIZE + INT_SIZE, value_ptr - following_ptr);
-//            assertEquals(-INT_SIZE, following_ptr - next_ptr);
-//            assertEquals(INT_SIZE, next_ptr - following_ptr);
-
             assertTrue(value_ptr > next_ptr);
             assertTrue(next_ptr > following_ptr);
             
+            assertEquals(value, mem.load_i64(value_ptr));
+            assertEquals(arbitrary, mem.load_i32(next_ptr));
+            assertEquals(value / 2, mem.load_i64(following_ptr));
+
             break;
         case HEAP:
 
