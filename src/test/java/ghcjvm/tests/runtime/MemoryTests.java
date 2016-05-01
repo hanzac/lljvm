@@ -43,6 +43,12 @@ public class MemoryTests
         assertStoreValue(Long.MAX_VALUE, Loc.STACK);
     }
 
+    @Test
+    public void testStoreMinLong()
+    {
+        assertStoreValue(Long.MIN_VALUE, Loc.STACK);
+    }
+
     private void assertStoreValue(long value, Loc which)
     {
         final int arbitrary = 999;
