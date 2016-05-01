@@ -8,10 +8,12 @@ import lljvm.runtime.Memory;
 
 public class ErrorTests
 {
+    private Error err;
+
     @Before
     public void setUp()
     {
-
+        err = Error.getErrorSingleton(Memory.getMemorySingleton());
     }
 
     @After
@@ -31,5 +33,24 @@ public class ErrorTests
         assertNotNull(err);
         
         assertTrue(err instanceof Error);
+    }
+
+    @Test
+    public void testSetErrno()
+    {
+        final int prevErrno = err.errno();
+        err.errno(Integer.MAX_VALUE);
+
+        //set errno to max value and check
+        final int maxVal = err.errno();
+        assertEquals(Integer.MAX_VALUE, maxVal);
+
+        err.errno(prevErrno);
+        assertEquals(err.errno(), prevErrno);
+
+        //set errno to min value and check
+        err.errno(Integer.MIN_VALUE);
+        final int minVal = err.errno();
+        assertEquals(Integer.MIN_VALUE, minVal);
     }
 }
