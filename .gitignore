@@ -16,3 +16,9 @@ tags
 
 #vim swap
 *.swp
+
+#eclipse project files
+#regenerate with `gradle eclipse`
+.classpath
+.settings/
+.project
