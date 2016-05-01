@@ -1,4 +1,4 @@
-package ghcjvm.runtime.tests.MemoryTests
+package ghcjvm.runtime.tests;
 
 import org.junit.*;
 import static org.junit.Assert.*;
