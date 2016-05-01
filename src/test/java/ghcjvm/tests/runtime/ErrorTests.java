@@ -1,4 +1,4 @@
-package ghcjvm.runtime.tests;
+package ghcjvm.tests.runtime;
 
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -29,10 +29,10 @@ public class ErrorTests
     @Test
     public void testGetSingleton()
     {
-        Error err = Error.getErrorSingleton(Memory.getMemorySingleton());
-        assertNotNull(err);
+        final Error e = Error.getErrorSingleton(Memory.getMemorySingleton());
+        assertNotNull(e);
         
-        assertTrue(err instanceof Error);
+        assertTrue(e instanceof Error);
     }
 
     @Test
