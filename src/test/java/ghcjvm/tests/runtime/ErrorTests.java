@@ -45,12 +45,13 @@ public class ErrorTests
         final int maxVal = err.errno();
         assertEquals(Integer.MAX_VALUE, maxVal);
 
-        err.errno(prevErrno);
-        assertEquals(err.errno(), prevErrno);
-
         //set errno to min value and check
         err.errno(Integer.MIN_VALUE);
         final int minVal = err.errno();
         assertEquals(Integer.MIN_VALUE, minVal);
+
+        //reset and check
+        err.errno(prevErrno);
+        assertEquals(err.errno(), prevErrno);
     }
 }
